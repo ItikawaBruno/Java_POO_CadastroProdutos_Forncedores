@@ -57,19 +57,14 @@ public class Principal {
     private void cadastroProdutos(){
         Fornecedor fornecedor = isFornecedor();
         if(fornecedor == null) {
-            String nome = JOptionPane.showInputDialog("Digite o nome do produto: ");
-            double valor = Double.parseDouble(JOptionPane.showInputDialog("Digite o valor do produto: "));
-            int quantidade = Integer.parseInt(JOptionPane.showInputDialog("Digite a quantidade do produto: "));
             fornecedor = cadastroFornecedor();
-            Produto produto = new Produto(nome, valor, quantidade, fornecedor);
-            listaProdutos.add(produto);
-        }else {
+        }
             String nome = JOptionPane.showInputDialog("Digite o nome do produto: ");
             double valor = Double.parseDouble(JOptionPane.showInputDialog("Digite o valor do produto: "));
             int quantidade = Integer.parseInt(JOptionPane.showInputDialog("Digite a quantidade do produto: "));
             Produto produto = new Produto(nome, valor, quantidade, fornecedor);
             listaProdutos.add(produto);
-        }
+
     }
 
     private Fornecedor cadastroFornecedor(){
